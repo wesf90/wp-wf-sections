@@ -9,20 +9,22 @@ class WF_Section {
 	// WF_Section('My echo section', false, true);
 	public function __construct($title, $ad=false, $echo=true)
 	{
-		if ( empty($title) ) break;
-		
-		$content = WF_Section::get_section($title);
+		if ( !empty($title) ){
 
-		if ( empty($content) ){
-			// Create post
-			$content = WF_Section::create_section($title, $ad);
-		}
+			$content = WF_Section::get_section($title);
 
-		if ( $echo ){
-			echo $content;
-		}
-		else{
-			return $content;
+			if ( empty($content) ){
+				// Create post
+				$content = WF_Section::create_section($title, $ad);
+			}
+
+			if ( $echo ){
+				echo $content;
+			}
+			else{
+				return $content;
+			}
+
 		}
 	}
 

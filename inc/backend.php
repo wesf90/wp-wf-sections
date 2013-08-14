@@ -47,7 +47,7 @@ function sc_wf_section($atts)
 		'echo'	=> true
 	), $atts ) );
 
-	new WF_Section($title, $ad, $echo)
+	new WF_Section($title, $ad, $echo);
 }
 
 
