@@ -36,4 +36,19 @@ function wf_create_sections_post_type() {
 	register_post_type( 'wf_sections', $args );
 }
 
+
+// The shortcode
+add_shortcode('wf_section', 'sc_wf_section');
+function sc_wf_section($atts)
+{
+	extract( shortcode_atts( array(
+		'title' => '',
+		'ad'		=> '',
+		'echo'	=> true
+	), $atts ) );
+
+	new WF_Section($title, $ad, $echo)
+}
+
+
 ?>

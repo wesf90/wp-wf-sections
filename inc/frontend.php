@@ -9,6 +9,8 @@ class WF_Section {
 	// WF_Section('My echo section', false, true);
 	public function __construct($title, $ad=false, $echo=true)
 	{
+		if ( empty($title) ) break;
+		
 		$content = WF_Section::get_section($title);
 
 		if ( empty($content) ){
