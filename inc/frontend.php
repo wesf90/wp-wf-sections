@@ -4,20 +4,33 @@ class WF_Section {
 
 	// Main function
 	// Samples:
-	// WF_Section('My section');
-	// WF_Section('My ad', '300x250');
-	// WF_Section('My echo section', false, true);
-	public function __construct($title, $ad=false, $echo=true)
+	// WF_Section('My section');                    // simple placement with echo
+	// WF_Section('My ad', '300x250');              // ad
+	// WF_Section('My echo section', false, true);  // no ad, no echo
+	public function __construct($config, $ad=false, $echo=true)
 	{
-		if ( !empty($title) ){
+		$opts = wp_parse_args($config, array(
+			'title' 			=> '',
+			'default'			=> '',
+			'shortcodes' 	=> true,
+			'ad'    			=> false,
+			'echo'  			=> true
+		));
+		extract( $opts );
 
+
+		if ( !empty($title) ){
 			$content = WF_Section::get_section($title);
 
 			if ( empty($content) ){
 				// Create post
-				$content = WF_Section::create_section($title, $ad);
+				$content = WF_Section::create_section($title, $ad, $default);
 			}
 
+			// Do shortcode?
+			if ( $shortcodes ) $content = do_shortcode($content);
+
+			// Echo or return
 			if ( $echo ){
 				echo $content;
 			}
@@ -38,12 +51,15 @@ class WF_Section {
 
 
 	// Create section
-	private function create_section($title, $ad)
+	private function create_section($title, $ad, $default)
 	{
 		$slug = sanitize_title_with_dashes($title);
 
 		// Are we creating an ad section?
 		$content = ( $ad ) ? "<img src='http://placehold.it/{$ad}&text={$ad}' />" : "[Section: {$slug}]";
+
+		// Did we have default content that should be in this section instead?
+		if ( !empty($default) ) $content = $default;
 
 		$post = array(
 		  'comment_status' => 'closed', 

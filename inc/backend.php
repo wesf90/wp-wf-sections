@@ -41,13 +41,15 @@ function wf_create_sections_post_type() {
 add_shortcode('wf_section', 'sc_wf_section');
 function sc_wf_section($atts)
 {
-	extract( shortcode_atts( array(
-		'title' => '',
-		'ad'		=> '',
-		'echo'	=> true
-	), $atts ) );
+	$opts = shortcode_atts( array(
+		'title' 			=> '',
+		'default'			=> '',
+		'shortcodes' 	=> true,
+		'ad'    			=> false,
+		'echo'  			=> true
+	), $atts );
 
-	new WF_Section($title, $ad, $echo);
+	new WF_Section($opts);
 }
 
 
