@@ -9,15 +9,22 @@ class WF_Section {
 	// WF_Section('My echo section', false, true);  // no ad, no echo
 	public function __construct($config, $ad=false, $echo=true)
 	{
-		$opts = wp_parse_args($config, array(
-			'title' 			=> '',
-			'default'			=> '',
-			'shortcodes' 	=> true,
-			'ad'    			=> false,
-			'echo'  			=> true
-		));
-		extract( $opts );
-
+		// Backwards compatibility
+		if ( !is_array($config) ){
+			$title      = $config;
+			$default    = '';
+			$shortcodes = true;
+		}
+		else{
+			$opts = wp_parse_args($config, array(
+				'title' 			=> '',
+				'default'			=> '',
+				'shortcodes' 	=> true,
+				'ad'    			=> false,
+				'echo'  			=> true
+			));
+			extract( $opts );
+		}
 
 		if ( !empty($title) ){
 			$content = WF_Section::get_section($title);
