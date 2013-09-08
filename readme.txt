@@ -1,7 +1,7 @@
 === Sections by Wesfed ===
 
 Contributors: therealwesfoster
-Tags: adsense, sections, content, text placement
+Tags: adsense, sections, content, text placement, ads, wesfed
 Requires at least: 3.0.1
 Tested up to: 3.6
 Stable tag: 1.0
@@ -47,11 +47,11 @@ To alter these defaults, simply write the code as:
 To allow even more features, use an array to assign your options (defaults are shown):
 
     new WF_Sections(array(
-		'title' 		=> '',		// The title of the section
-		'default'		=> '',		// The default content upon creation
-		'shortcodes' 	=> true,	// Parse shortcodes inside the content?
-		'ad'    		=> false,	// Is this an ad? If so, place the dimensions such as '300x250'
-		'echo'  		=> true		// Echo or return the content
+		'title'      => '',			// The title of the section
+		'default'    => '',			// The default content upon creation
+		'shortcodes' => true,		// Parse shortcodes inside the content?
+		'ad'         => false,	// Is this an ad? If so, place the dimensions such as '300x250'
+		'echo'       => true		// Echo or return the content
 	));
 
 ####Shortcode####
@@ -61,7 +61,7 @@ To set your own options when using the shortcode, simply add the option name to 
 
 ####Creating Ad Placements####
 
-This plugin also allows you to quickly create sectional ad placements by setting the size in the shortcode or function call (shown above). A pre-filled stand-in image will be inserted as the content of your section by default. This can always be taken out later and replaced with your actual ad (for example: adsense). This is a great tool for creating design mockups.
+This plugin also allows you to quickly create sectional ad placements by setting the size in the shortcode or function call (shown above). A pre-filled stand-in image will be inserted as the content of your section by default. This can always be taken out later and replaced with your actual ad's code. This is a great tool for creating design mockups.
 
 
 == Installation ==

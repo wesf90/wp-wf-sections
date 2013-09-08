@@ -5,7 +5,7 @@ Version: 1
 Plugin URI: 
 Description: Easily insert editable content sections into your site via shortcode or php
 Author: Wes Foster
-Author URI: http://www.wesfoster.com
+Author URI: http://twitter.com/therealwesf
 License: GPL v3
 
 This program is free software: you can redistribute it and/or modify
