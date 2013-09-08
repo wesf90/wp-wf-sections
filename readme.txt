@@ -8,15 +8,13 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows you to create admin-manageable content sections across your site. You simply add the small code (php or shortcode) where you would like the 
-
-section to appear, then edit it in the admin panel. Extremely easy to use, and allows an unlimited number of sections to be created.
+This plugin allows you to create admin-manageable content sections across your site. You simply add the small code (php or shortcode) where you would like the section to appear, then edit it in the admin panel. Extremely easy to use, and allows an unlimited number of sections to be created.
 
 == Description ==
 
-This plugin allows you to create admin-manageable content sections across your site. You simply add the small code (php or shortcode) where you would like the 
+This plugin allows you to create admin-manageable content sections across your site. You simply add the small code (php or shortcode) where you would like the section to appear, then edit it in the admin panel. Extremely easy to use, and allows an unlimited number of sections to be created.
 
-section to appear, then edit it in the admin panel. Extremely easy to use, and allows an unlimited number of sections to be created.
+Feel free to help develop this plugin at: https://github.com/wesf90/wp-wf-sections
 
 ##How to Use##
 
@@ -34,6 +32,7 @@ After adding this code, the section will automatically create itself in the admi
 
 ###Section Options###
 This plugin offers a number of options which allow for quicker development, and easier implementation, whether you're using the shortcode or the PHP method to implement it.
+
 ####PHP####
 The defaults for this code are:
 
@@ -42,7 +41,7 @@ The defaults for this code are:
 To alter these defaults, simply write the code as:
 
 	new WF_Section('My section');                    // Simple placement with echo
-	new WF_Section('My ad', '300x250');              // Created a section with a pre-filled ad image
+	new WF_Section('My ad', '300x250');              // Created a section with a pre-filled ad image. Great for wireframing!
 	new WF_Section('My echo section', false, true);  // Doesn't display as an ad, and returns the content instead of echoing it
 
 To allow even more features, use an array to assign your options (defaults are shown):
@@ -59,6 +58,11 @@ To allow even more features, use an array to assign your options (defaults are s
 To set your own options when using the shortcode, simply add the option name to the shortcode call. The options and their defaults are the same as listed above for the PHP method:
 
 	[wf_section title="Your Title" default="The default content upon creation" shortcodes=true ad="300x250" echo=true]
+
+####Creating Ad Placements####
+
+This plugin also allows you to quickly create sectional ad placements by setting the size in the shortcode or function call (shown above). A pre-filled stand-in image will be inserted as the content of your section by default. This can always be taken out later and replaced with your actual ad (for example: adsense). This is a great tool for creating design mockups.
+
 
 == Installation ==
 
