@@ -46,7 +46,7 @@ To alter these defaults, simply write the code as:
 
 To allow even more features, use an array to assign your options (defaults are shown):
 
-    new WF_Sections(array(
+    new WF_Section(array(
 		'title'      => '',			// The title of the section
 		'default'    => '',			// The default content upon creation
 		'shortcodes' => true,		// Parse shortcodes inside the content?
